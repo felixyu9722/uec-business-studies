@@ -127,8 +127,13 @@
   function toggleSidebar() {
     if (window.innerWidth <= 1050) {
       const isOpen = sidebar.classList.contains("open");
-      sidebar.classList.toggle("open", !isOpen);
-      backdrop.hidden = isOpen;
+      if (isOpen) {
+        sidebar.classList.remove("open");
+        backdrop.hidden = true;
+      } else {
+        sidebar.classList.add("open");
+        backdrop.hidden = false;
+      }
       return;
     }
     sidebarCollapsed = !sidebarCollapsed;
@@ -672,7 +677,7 @@
   siteSearchClear.addEventListener("click", () => { siteSearchInput.value = ""; renderSearchResults(); siteSearchInput.focus(); });
   document.getElementById("themeButton").addEventListener("click", () => { theme = theme === "light" ? "dark" : "light"; localStorage.setItem("business-theme", theme); setAppearance(); });
   sidebarToggle?.addEventListener("click", toggleSidebar);
-  document.getElementById("mobileMenuButton")?.addEventListener("click", openDrawer);
+  document.getElementById("mobileMenuButton")?.addEventListener("click", (e) => { e.preventDefault(); openDrawer(); });
   backdrop.addEventListener("click", closeDrawer);
   imageDialogClose.addEventListener("click", closeImageDialog);
   imageDialog.addEventListener("click", event => { if (event.target === imageDialog) closeImageDialog(); });
