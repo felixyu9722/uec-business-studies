@@ -125,6 +125,12 @@
   }
 
   function toggleSidebar() {
+    if (window.innerWidth <= 1050) {
+      const isOpen = sidebar.classList.contains("open");
+      sidebar.classList.toggle("open", !isOpen);
+      backdrop.hidden = isOpen;
+      return;
+    }
     sidebarCollapsed = !sidebarCollapsed;
     localStorage.setItem("business-sidebar-collapsed", String(sidebarCollapsed));
     document.body.classList.toggle("sidebar-collapsed", sidebarCollapsed);
