@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="马来西亚华文独中高中商业学教师教学与学生复习平台">
+  <meta name="theme-color" content="#173f82">
+  <title>高中商业学｜教师教学与学生复习平台</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-theme="light" data-mode="student">
+  <header class="topbar">
+    <button id="sidebarToggle" class="sidebar-toggle-btn" type="button" title="展开/折叠侧边栏" aria-label="展开/折叠侧边栏">☰</button>
+    <a class="brand" href="#/home"><span class="brand-mark">商</span><span><b>高中商业学</b><small>UEC BUSINESS STUDIES</small></span></a>
+    <span class="syllabus-badge">独中统考导向</span>
+    <div id="topbarClock" class="topbar-clock" title="马来西亚标准时间 (GMT+8)"></div>
+    <div class="site-search" role="search">
+      <label class="sr-only" for="siteSearchInput">搜寻课程内容</label>
+      <div class="site-search-box"><span aria-hidden="true">⌕</span><input id="siteSearchInput" type="search" placeholder="搜寻章节、术语、题目…" autocomplete="off" aria-controls="siteSearchResults" aria-expanded="false"><button id="siteSearchClear" type="button" aria-label="清除搜寻" hidden>×</button></div>
+      <div id="siteSearchResults" class="site-search-results" role="listbox" hidden></div>
+    </div>
+    <nav class="topnav" aria-label="主要导航"><a href="#/home">课程首页</a><a href="#/chapter/1/2">章节学习</a><a href="#/bank/historical">历届翻新题</a><a href="#/bank/supplemental">专项题库</a></nav>
+    <div class="top-actions">
+      <button id="themeButton" class="theme-button" aria-label="切换明暗模式">夜</button>
+      <div class="mode-switch" aria-label="显示模式">
+        <button data-mode="student">学生</button>
+        <button data-mode="teacher">教师</button>
+      </div>
+    </div>
+  </header>
+
+  <div id="drawerBackdrop" class="drawer-backdrop" hidden></div>
+  <aside id="sidebar" class="sidebar" aria-label="课程目录"></aside>
+  <main id="mainContent" class="main-content" tabindex="-1"></main>
+
+  <dialog id="imageDialog" class="image-dialog" aria-labelledby="imageDialogCaption">
+    <button id="imageDialogClose" class="image-dialog-close" type="button" aria-label="关闭放大图片">×</button>
+    <div class="image-dialog-content">
+      <img id="imageDialogImage" src="" alt="">
+      <div class="image-dialog-caption">
+        <b id="imageDialogCaption"></b>
+        <small id="imageDialogSource"></small>
+      </div>
+    </div>
+  </dialog>
+
+  <dialog id="pdfDialog" class="pdf-dialog" aria-labelledby="pdfDialogTitle">
+    <header class="pdf-dialog-header">
+      <div><small>课本原文</small><b id="pdfDialogTitle">商业学课本</b></div>
+      <div class="pdf-dialog-actions">
+        <button id="pdfDialogClose" type="button" aria-label="关闭课本">×</button>
+      </div>
+    </header>
+    <iframe id="pdfDialogFrame" title="商业学课本PDF"></iframe>
+  </dialog>
+
+  <nav class="mobile-nav" aria-label="手机导航">
+    <a href="#/home"><span>⌂</span>首页</a>
+    <a href="#/chapter/1/2"><span>▤</span>学习</a>
+    <button id="mobileMenuButton"><span>☰</span>目录</button>
+  </nav>
+
+  <noscript><div class="noscript">此网页需要启用JavaScript，才能显示章节导航和互动内容。</div></noscript>
+  <script src="chapter-content.js"></script>
+  <script src="interactive-review.js"></script>
+  <script src="question-bank-data.js"></script>
+  <script src="app.js" defer></script>
+</body>
+</html>

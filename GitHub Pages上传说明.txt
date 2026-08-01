@@ -1,0 +1,37 @@
+高中商业学静态网站
+
+一、本机打开
+
+直接双击 index.html。
+不需要安装Node.js，也不需要运行命令窗口。
+
+二、上传GitHub
+
+只上传本“github-pages-site”资料夹里面的内容：
+
+- index.html
+- styles.css
+- app.js
+- chapter-content.js
+- favicon.svg
+- .nojekyll
+- assets资料夹
+
+不要上传外层的node_modules、dist、app或Next.js项目文件。
+
+三、启用GitHub Pages
+
+1. 进入GitHub仓库的 Settings。
+2. 选择 Pages。
+3. Build and deployment选择 Deploy from a branch。
+4. Branch选择 main，资料夹选择 /(root)。
+5. 保存并等待GitHub生成网址。
+
+四、网站路由
+
+网站使用 #/home、#/chapter/1/2 等Hash路由，因此刷新章节页面时不会出现404。
+
+五、容量
+
+当前发布资料约220MB，主要是21章课本PDF与84张章节教学图解，其中包括21张NotebookLM原始PNG信息图；没有讲义或题库DOCX下载文件。
+最大单一文件没有超过GitHub单一文件100MB限制。
